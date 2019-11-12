@@ -2,7 +2,7 @@
 Boris Bike Challenge 
 -
 
-Hello! This is the Week_1 pairing challenge project, Boris Bikes! 
+Hello! This is the Week_1 pairing challenge project, Boris Bikes! 🚲
 
 We've been commissioned by Transport for London, the body responsible for delivery of a new bike system, to build the best bike system in London.
 
