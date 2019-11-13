@@ -1,14 +1,8 @@
+require 'bike'
 
+describe Bike do
 
-require 'docking_station'
+#Test: To see if our Bike instance responds to method working?
+    it {is_expected.to respond_to :working?}
 
-describe Bike do 
-
-it "Should return true when .working? is called on a bike instance" do
-    docking_station = DockingStation.new
-    bike = docking_station.release_bike
-    expect (bike.working?).to be true
-end
-
-end
-
+end 
