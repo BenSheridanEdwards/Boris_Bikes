@@ -1,14 +1,14 @@
 require 'docking_station'
+require 'bike'
 
 describe DockingStation do 
 
-it "Should create an instance, docking_station when Class.new is called." do 
-    docking_station = DockingStation.new 
-    expect (docking_station).to be_instance_of DockingStation
-end
+    let(:bike) { Bike.new }
 
-it "Create an instance of Bike when release_bike is called on docking_station" do 
-    expect (docking_station.release_bike).to be_instance_of Bike
-end
+    #Release a bike
+    it { is_expected.to respond_to :release_bike }
+
+    # Check bike can be docked successfully
+    it { is_expected.to respond_to(:dock_bike).with(1).argument }
 
 end
