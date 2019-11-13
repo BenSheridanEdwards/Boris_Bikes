@@ -9,4 +9,3 @@ class Bike
        return true
     end 
 end 
-
