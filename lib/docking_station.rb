@@ -8,20 +8,18 @@ class DockingStation
   end
 
   def release_bike
-    
     if dock.size <= 1
-        bike = dock.pop
-        return bike if bike.working?
+        dock.each { |bike| return bike if bike.working? }
+        raise "All bikes broken"
     elsif
-        @dock.size == 0 
-        return "Dock empty"
+        @dock.count == 0 
+        raise "No bikes available, please come back later."
     end 
-
   end
 
   def dock_bike(bike, working = true)
-    raise "Full Dock, please come back later" if full? #Create test
-    raise "Your bike is broken! Take it to the garage" unless bike.working? #Create test
+    raise "Full dock, please come back later." if full? #Create test
+    raise "Your bike is broken! Please take it to the nearest garage." unless bike.working? #Create test
     @dock << bike
   end
 
