@@ -1,39 +1,20 @@
 require_relative 'bike'
 
 class DockingStation
-  
-  def initialize(capacity = 20)
+
+attr_reader :bike
+
+  def initialize
     @dock = []
-    @capacity = capacity
+    capacity = 20
   end
 
   def release_bike
-    if dock.size <= 1
-        dock.each { |bike| return bike if bike.working? }
-        raise "All bikes broken"
-    elsif
-        @dock.count == 0 
-        raise "No bikes available, please come back later."
-    end 
+    @bike
   end
 
-  def dock_bike(bike, working = true)
-    raise "Full dock, please come back later." if full? #Create test
-    raise "Your bike is broken! Please take it to the nearest garage." unless bike.working? #Create test
+  def dock(bike)
+    @bike = bike
     @dock << bike
   end
-
-  end
-
-  private
-
-  attr_reader :dock
-
-  def full?
-    dock.count >= capacity
-  end
-
-  def empty?
-    dock.empty?
-  end
-end 
+end
