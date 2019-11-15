@@ -5,25 +5,25 @@ class DockingStation
 DEFAULT_CAPACITY = 20
 
 attr_reader :capacity
-attr_reader :dock
+attr_reader :bike_dock
 
   def initialize(capacity=DEFAULT_CAPACITY)
-    @dock = []
+    @bike_dock = []
     @capacity = capacity
   end
 
-  def dock_bike(bike)
+  def dock(bike)
     raise "Docking station full" if full?
-    @dock << bike
+    @bike_dock << bike
   end
 
-  def release_bike
+  def release
     raise 'No bikes available' if empty?
     counter = 0
-    while counter < @dock.length
-      if @dock[counter].working?
-        return @dock.delete_at(counter)
-        @dock.delete_at(counter)
+    while counter < @bike_dock.length
+      if @bike_dock[counter].working?
+        return @bike_dock.delete_at(counter)
+        @bike_dock.delete_at(counter)
       end
       counter += 1
       raise 'All bikes broken' if all_bikes_broken
@@ -34,15 +34,15 @@ attr_reader :dock
   private
 
   def full?
-    @dock.count >= @capacity
+    @bike_dock.count >= @capacity
   end 
 
   def empty?
-    @dock.empty?
+    @bike_dock.empty?
   end
 
   def all_bikes_broken
-    counter = @dock.length
+    counter = @bike_dock.length
   end
 
 
