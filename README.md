@@ -76,7 +76,7 @@ So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
 ```
 
--
+
 <a name="Methods">Objects & Methods</a>
 -
 
