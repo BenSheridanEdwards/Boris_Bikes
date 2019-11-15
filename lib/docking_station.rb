@@ -13,14 +13,22 @@ attr_reader :dock
   end
 
   def dock_bike(bike)
-    fail "Docking station full" if full?
+    raise "Docking station full" if full?
     @dock << bike
   end
 
   def release_bike
-    fail 'No bikes available' if empty?
-    @dock.each_with_index {|bike, index| dock.delete_at(index) ; return bike if bike.working? }
-    fail "All bikes broken"
+    raise 'No bikes available' if empty?
+    counter = 0
+    while counter < @dock.length
+      if @dock[counter].working?
+        return @dock.delete_at(counter)
+        @dock.delete_at(counter)
+      end
+      counter += 1
+      raise 'All bikes broken' if all_bikes_broken
+    end
+
   end
 
   private
@@ -33,4 +41,11 @@ attr_reader :dock
     @dock.empty?
   end
 
+  def all_bikes_broken
+    counter = @dock.length
+  end
+
+
 end
+
+
