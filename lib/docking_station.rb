@@ -44,8 +44,7 @@ attr_reader :bike_dock
   def all_bikes_broken
     counter = @bike_dock.length
   end
-
-
+  
 end
 
 

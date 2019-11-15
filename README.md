@@ -87,7 +87,7 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .working?      | Checks if the bike is working                          |
 | .broken?       | Checks if the bike is broken                           |
 | .report_broken | Reports the bike as broken                             |
---     
+  
 
 
 
@@ -99,8 +99,9 @@ I'd like docking stations to accept returning bikes (broken or not).
 |--------------------|---------------------------------------------------------------------------------|
 | DockingStation.new | Creates a new instance of a docking station                                     |
 | .bikes             | returns an array of all docked bikes                                            |
-| .dock_bike(bike)   | docks a bike in the station                                                     |
-| .release_bike(bike)| releases a docked bike from the station                                         |
+| .dock(bike)        | docks a bike in the station                                                     |
+| .release           | releases a docked bike from the station if one is available                     |
 | .full?             | returns true if the bike dock is full                                           |
 | .empty?            | returns true if the bike dock is empty                                          |
---
+| .all_bikes_broken  | returns true if bikes are docked at the station, but all are broken             |
+
