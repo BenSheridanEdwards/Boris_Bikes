@@ -19,7 +19,6 @@ We're going to create a network of docking stations and bikes that anyone can us
 Throughout the course of the project we we’re given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. As in all TDD we created a test for a feature that we wanted to manipulate and then wrote the code to pass those tests.
 
 
--
 <a name="Story">User Story</a>
 -
 
