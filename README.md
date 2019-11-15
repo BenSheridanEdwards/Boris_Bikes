@@ -79,12 +79,15 @@ I'd like docking stations to accept returning bikes (broken or not).
 <a name="Methods">Objects & Methods</a>
 -
 
+
 ### Bike
 
 
 | Methods  | Description                                            |
 |----------|--------------------------------------------------------|
 | Bike.new | Creates a new instance of a bike                       |
+
+
 
 
 ### DockingStation
