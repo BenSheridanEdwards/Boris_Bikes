@@ -10,4 +10,11 @@ class Bike
         working
     end 
 
+    def report_broken
+        @working = false
+    end
+
+    def broken?
+        !working?
+    end
 end 

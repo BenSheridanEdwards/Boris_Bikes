@@ -21,7 +21,7 @@ describe Bike do
     it "should change a bike's working? feedback to false" do
         expect(bike.working?).to be_truthy
         bike.report_broken
-        expect(bike.working?)to be_falsey
+        expect(bike.working?).to be_falsey
     end
 
   end
