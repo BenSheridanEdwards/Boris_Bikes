@@ -4,20 +4,24 @@
 Boris Bike Challenge 
 -
 
-[User Story](#Story) | [Objects & Methods](#Methods)
+[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Feature Tests (How it works)](#Feature Tests)
 
-## <a name="Outline">Outline</a>
+-
+
+<a name="Outline">Outline</a>
 Hello! This is the Week_1 pairing challenge project, Boris Bikes! 🚲
 
 We've been commissioned by Transport for London, the body responsible for delivery of a new bike system, to build the best bike system in London. 🚀
 
 We're going to create a network of docking stations and bikes that anyone can use. By building a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream into a reality.
 
-## <a name="Task">The Task</a>
+<a name="Task">The Task</a>
 Throughout the course of the project we we’re given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. As in all TDD we created a test for a feature that we wanted to manipulate and then wrote the code to pass those tests.
 
+<a name="Installation">Installation Instructions</a>
 
-<a name="Story">User Story</a>
+<a name="Story">User Stories</a>
+
 -
 ```
 As a person,
@@ -105,3 +109,5 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .empty?            | returns true if the bike dock is empty                                          |
 | .all_bikes_broken  | returns true if bikes are docked at the station, but all are broken             |
 
+
+<a name="Feature Tests">Feature Tests (How it works)</a>
