@@ -4,7 +4,7 @@
 Boris Bike Challenge 
 -
 
-[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Feature Tests](#Feature_Tests)
+[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Feature Tests](#Feature_Tests) | [User Stories](#Story) | [Objects & Methods](#Methods) |
 
 
 ## <a name="Outline">Outline</a>
@@ -19,6 +19,49 @@ We're going to create a network of docking stations and bikes that anyone can us
 Throughout the course of the project we we’re given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. As in all TDD we created a test for a feature that we wanted to manipulate and then wrote the code to pass those tests.
 
 ## <a name="Installation">Installation Instructions</a>
+
+Clone the repository from github then change directory into it.
+
+```
+$ git clone git@github.com:BenSheridanEdwards/Boris_Bikes.git
+$ cd Boris_Bikes
+```
+Load dependencies with bundle.
+```
+$ gem install bundle
+$ bundle
+```
+
+Load the app in IRB.
+```
+$ irb
+2.6.3 :001 > load './lib/docking_station.rb'
+ => true
+ 2.6.3 :002 > load './lib/bike.rb'
+ => true
+```
+
+## <a name="Feature_Tests">Feature Tests (How it works)</a>
+
+```
+2.6.3 :003 > station = DockingStation.new
+2.6.3 :004 > bike = Bike.new
+
+# To report your bike as broken, use .report_broken
+2.6.3 :005 > bike.report_broken
+2.6.3 :006 > bike.working?
+ => false
+
+# To dock at station, use .dock on the station and pass the bike as an argument,
+# you can then see bikes inside the station with .bikes
+# This will fail if the docking station is full
+
+2.6.3 :005 > station.dock(bike)
+2.2.3 :008 > station.bike_dock
+ => [#<Bike:0x007fdb4d9b5250 @working=true>]
+
+
+```
 
 ## <a name="Story">User Stories</a>
 
@@ -109,4 +152,4 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .all_bikes_broken  | returns true if bikes are docked at the station, but all are broken             |
 
 
-## <a name="Feature_Tests">Feature Tests (How it works)</a>
+
