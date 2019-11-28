@@ -4,7 +4,7 @@
 Boris Bike Challenge 
 -
 
-[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Feature Tests (How it works)](#Feature Tests)
+[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [User Stories](#Story) | [Objects & Methods](#Methods) | [Feature Tests](#Feature_Tests)
 
 
 ## <a name="Outline">Outline</a>
@@ -22,7 +22,6 @@ Throughout the course of the project we we’re given several `User Stories` whi
 
 ## <a name="Story">User Stories</a>
 
--
 ```
 As a person,
 So that I can use a bike,
@@ -110,4 +109,4 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .all_bikes_broken  | returns true if bikes are docked at the station, but all are broken             |
 
 
-## <a name="Feature Tests">Feature Tests (How it works)</a>
+## <a name="Feature_Tests">Feature Tests (How it works)</a>
