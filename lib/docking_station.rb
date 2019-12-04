@@ -3,7 +3,7 @@ require_relative 'bike'
 class DockingStation
 
   DEFAULT_CAPACITY = 20
-
+  
   attr_reader :capacity
   attr_reader :bike_dock
 
@@ -29,9 +29,7 @@ class DockingStation
       end
       counter += 1
       raise 'All bikes broken' if all_bikes_broken
-
     end
-
   end
 
 private
