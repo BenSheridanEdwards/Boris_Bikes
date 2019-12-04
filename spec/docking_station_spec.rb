@@ -1,52 +1,49 @@
-require "docking_station"
+require 'docking_station'
 
-describe DockingStation do
-
+RSpec.describe 'DockingStation' do
+  
   let(:station) { DockingStation.new }
-  let(:bike) { Bike.new }
+  let(:bike) { double :bike }
 
-  describe '#initialize' do
-      
-    # If no capacity is set by the user, then the default capacity is set
-    it 'uses a default capacity when no input is given' do
-      expect(station.capacity).to eq(DockingStation::DEFAULT_CAPACITY)
-    end
-  end
-
-  describe '#dock' do
-
-    # You're able to dock a working bike, then release the same bike
-    it 'can dock and release a working bike' do
-      station.dock(bike)
-      bike = station.release
-      expect(bike.working?).to eq(true)
+  context 'when a user docks a working bike' do
+    before(:each) do
+      allow(bike).to receive(:working?).and_return true
     end
 
-    # Raises error when full
-    it 'raises an error when full' do
-      station.capacity.times { station.dock(Bike.new) }
-      expect { station.dock(Bike.new) }.to raise_error 'Docking station full'
-    end
-  end
-
-  describe '#release_bike' do 
-
-    # Docking Station can release a bike
-    it 'releases a bike when one is available' do
+    it 'should be able to release the same working bike' do
       station.dock(bike)
       expect(station.release).to eq(bike)
     end
+  end
 
-    # Raises an error when there are no bikes available
-    it 'raises an error when there are no bikes available' do
-      expect { station.release }.to raise_error 'No bikes available'
+  context 'when the docking station is full' do
+    before(:each) do
+      DockingStation::DEFAULT_CAPACITY.times { station.dock(double :bike, working: true) }
     end
 
-    # Doesn't release a bike if none are working
-    it 'does not release broken bikes' do
-      bike.report_broken
-      station.dock(bike)
-      expect { station.release }.to raise_error 'All bikes broken'
+    it 'should raise an error when a user tries to dock a bike' do
+      message = 'Docking station full'
+      expect { station.dock(bike) }.to raise_error message
+    end
+  end
+
+  context 'when the docking station is empty' do
+
+    it 'should raise an error telling the user there are no bikes available' do
+      message = 'No bikes available'
+      expect { station.release }.to raise_error message
+    end
+  end
+
+  context 'when all bikes in the docking station are broken' do
+    before(:each) do
+      allow(bike).to receive(:working?).and_return false
+      5.times { station.dock(bike) }
+   end
+
+    it 'should raise an error telling the user that all the bikes are broken' do
+      message = 'All bikes broken'
+      expect { station.release }.to raise_error message
     end
   end
 end
