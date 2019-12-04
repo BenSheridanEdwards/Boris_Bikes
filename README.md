@@ -103,5 +103,4 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .release           | releases a docked bike from the station if one is available                     |
 | .full?             | returns true if the bike dock is full                                           |
 | .empty?            | returns true if the bike dock is empty                                          |
-| .all_bikes_broken  | returns true if bikes are docked at the station, but all are broken             |
-
+        
