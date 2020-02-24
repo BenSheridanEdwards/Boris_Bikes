@@ -4,7 +4,7 @@
 Boris Bike Challenge 
 -
 
-[Project Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Features](#Features) | [User Stories](#Story) | [Objects & Methods](#Methods) |
+[Project Outline](#Outline) | [Task](#Task) | [User Stories](#Story) | [Installation Instructions](#Installation) | [How-To](#Features) | [Objects & Methods](#Methods) |
 
 
 ## <a name="Outline">Project Outline</a>
@@ -19,52 +19,6 @@ We're going to create a network of docking stations and bikes that anyone can us
 
 Throughout the course of the project we were given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. Then we test-drived the creation of the Boris Bike program.
 
-## <a name="Installation">Installation Instructions</a>
-
-Clone the repository from github then change directory into it.
-
-```
-$ git clone git@github.com:BenSheridanEdwards/Makers_Boris_Bikes_Ruby.git
-$ cd Makers_Boris_Bikes_Ruby
-```
-Load dependencies with bundle.
-```
-$ bundle install
-```
-
-Load the app in IRB, and require the docking station.
-
-```
-$ irb
-2.6.3 :001 > load './lib/docking_station.rb'
- => true
-```
-
-Create an instance of the Docking Station and a working Bike. 
-
-```
-
-2.6.3 :003 > station = DockingStation.new
- => #<DockingStation:0x00007f84ef97ec00 @bike_dock=[], @capacity=20>
-2.6.3 :004 > bike = Bike.new
- => #<Bike:0x00007f84ef987a08 @working=true>
-
-```
-
-## <a name="Features">Features</a>
-
-```
-
-# Bikes can be docked at the docking station
-2.6.3 :005 > station.dock(bike)
-=> [#<Bike:0x00007f84ef987a08 @working=true>]
-
-# Bikes can be released from the docking stations
-2.6.3 :006 > station.release
-=> #<Bike:0x00007f84ef987a08 @working=true>
-
-
-```
 
 ## <a name="Story">User Stories</a>
 
@@ -115,10 +69,59 @@ I'd like docking stations to accept returning bikes (broken or not).
 ```
 
 
+
+## <a name="Installation">Installation Instructions</a>
+
+Clone the repository from github then change directory into it.
+
+```
+$ git clone git@github.com:BenSheridanEdwards/Makers_Boris_Bikes_Ruby.git
+$ cd Makers_Boris_Bikes_Ruby
+```
+Load dependencies with bundle.
+```
+$ bundle install
+```
+
+Load the app in IRB, and require the docking station.
+
+```
+$ irb
+2.6.3 :001 > load './lib/docking_station.rb'
+ => true
+```
+
+Create an instance of the Docking Station and a working Bike. 
+
+```
+
+2.6.3 :003 > station = DockingStation.new
+ => #<DockingStation:0x00007f84ef97ec00 @bike_dock=[], @capacity=20>
+2.6.3 :004 > bike = Bike.new
+ => #<Bike:0x00007f84ef987a08 @working=true>
+
+```
+
+## <a name="Features">How to use Boris Bikes</a>
+
+```
+
+# Bikes can be docked at the docking station
+2.6.3 :005 > station.dock(bike)
+=> [#<Bike:0x00007f84ef987a08 @working=true>]
+
+# Bikes can be released from the docking stations
+2.6.3 :006 > station.release
+=> #<Bike:0x00007f84ef987a08 @working=true>
+
+
+```
+
+
+
 ## <a name="Methods">Objects & Methods</a>
 
 ### Bike
-
 
 | Methods        | Description                                            |
 |----------------|--------------------------------------------------------|
@@ -127,12 +130,8 @@ I'd like docking stations to accept returning bikes (broken or not).
 | .broken?       | Checks if the bike is broken                           |
 | .report_broken | Reports the bike as broken                             |
   
-
-
-
-
+  
 ### DockingStation
-
 
 | Methods            | Description                                                                     |
 |--------------------|---------------------------------------------------------------------------------|
