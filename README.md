@@ -83,6 +83,18 @@ Load dependencies with bundle.
 $ bundle install
 ```
 
+Run RSpec in your terminal to run all unit and feature tests.
+
+```
+$ rspec
+```
+
+Feel free to also run Rubocop – a ruby code-quality checker
+
+```
+$ rubocop
+```
+
 Load the app in IRB, and require the docking station.
 
 ```
