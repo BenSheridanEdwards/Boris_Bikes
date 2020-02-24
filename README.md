@@ -4,61 +4,64 @@
 Boris Bike Challenge 
 -
 
-[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Feature Tests](#Feature_Tests) | [User Stories](#Story) | [Objects & Methods](#Methods) |
+[Project Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Features](#Features) | [User Stories](#Story) | [Objects & Methods](#Methods) |
 
 
-## <a name="Outline">Outline</a>
+## <a name="Outline">Project Outline</a>
  
-Hello! This is the Week_1 pairing challenge project, Boris Bikes! 🚲
+Hello World! This is the Maker's week 1 pairing project, Boris Bikes! 🚲
 
-We've been commissioned by Transport for London, the body responsible for delivery of a new bike system, to build the best bike system in London. 🚀
+This week we've been commissioned by Transport for London (TFL), to deliver a new bike system that'll be the best London has ever seen. 🚀
 
-We're going to create a network of docking stations and bikes that anyone can use. By building a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream into a reality.
+We're going to create a network of docking stations and bikes that anyone can use. By building a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make TFL's dream into a reality.
 
 ## <a name="Task">The Task</a>
-Throughout the course of the project we we’re given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. As in all TDD we created a test for a feature that we wanted to manipulate and then wrote the code to pass those tests.
+
+Throughout the course of the project we were given several `User Stories` which are listed below. We started to determine which parts of the `User Story` are `Objects` and which are `Methods`. Then we test-drived the creation of the Boris Bike program.
 
 ## <a name="Installation">Installation Instructions</a>
 
 Clone the repository from github then change directory into it.
 
 ```
-$ git clone git@github.com:BenSheridanEdwards/Boris_Bikes.git
-$ cd Boris_Bikes
+$ git clone git@github.com:BenSheridanEdwards/Makers_Boris_Bikes_Ruby.git
+$ cd Makers_Boris_Bikes_Ruby
 ```
 Load dependencies with bundle.
 ```
-$ gem install bundle
-$ bundle
+$ bundle install
 ```
 
-Load the app in IRB.
+Load the app in IRB, and require the docking station.
+
 ```
 $ irb
 2.6.3 :001 > load './lib/docking_station.rb'
  => true
- 2.6.3 :002 > load './lib/bike.rb'
- => true
 ```
 
-## <a name="Feature_Tests">Feature Tests (How it works)</a>
+Create an instance of the Docking Station and a working Bike. 
 
 ```
+
 2.6.3 :003 > station = DockingStation.new
+ => #<DockingStation:0x00007f84ef97ec00 @bike_dock=[], @capacity=20>
 2.6.3 :004 > bike = Bike.new
+ => #<Bike:0x00007f84ef987a08 @working=true>
 
-# To report your bike as broken, use .report_broken
-2.6.3 :005 > bike.report_broken
-2.6.3 :006 > bike.working?
- => false
+```
 
-# To dock at station, use .dock on the station and pass the bike as an argument,
-# you can then see bikes inside the station with .bikes
-# This will fail if the docking station is full
+## <a name="Features">Features</a>
 
+```
+
+# Bikes can be docked at the docking station
 2.6.3 :005 > station.dock(bike)
-2.2.3 :008 > station.bike_dock
- => [#<Bike:0x007fdb4d9b5250 @working=true>]
+=> [#<Bike:0x00007f84ef987a08 @working=true>]
+
+# Bikes can be released from the docking stations
+2.6.3 :006 > station.release
+=> #<Bike:0x00007f84ef987a08 @working=true>
 
 
 ```
@@ -66,29 +69,21 @@ $ irb
 ## <a name="Story">User Stories</a>
 
 ```
-As a person,
+As a cyclist,
 So that I can use a bike,
 I'd like a docking station to release a bike.
 
-As a person,
-So that I can use a good bike,
-I'd like to see if a bike is working
+As a cyclist,
+So that I can make use of a working bike,
+I'd like to see if a bike is working.
 
-As a person,
-So that I can use a bike,
-I'd like to get a bike from a docking station.
-
-As a person,
-So that I can use a good bike,
-I'd like to see if a bike is working
+As a cyclist,
+So I can return bikes I've hired,
+I'd like to be able to dock them at a docking station.
 
 As a member of the public
-So I can return bikes I've hired
-I want to dock my bike at the docking station
-
-As a member of the public
-So I can decide whether to use the docking station
-I want to see a bike that has been docked
+So I can only receive working bikes from the station,
+I don't want to receive broken bikes from a docking station.
 
 As a member of the public,
 So that I am not confused and charged unnecessarily,
