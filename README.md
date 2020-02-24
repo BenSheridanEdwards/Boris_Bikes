@@ -116,8 +116,6 @@ I'd like docking stations to accept returning bikes (broken or not).
 
 
 ## <a name="Methods">Objects & Methods</a>
--
-
 
 ### Bike
 
