@@ -21,13 +21,13 @@ class DockingStation
   def release
     raise 'No bikes available' if empty?
 
-    counter = 0
-    while counter < @bike_dock.length
-      if @bike_dock[counter].working?
-        return @bike_dock.delete_at(counter)
-        @bike_dock.delete_at(counter)
+    @counter = 0
+    while @counter < @bike_dock.length
+      if @bike_dock[@counter].working?
+        return @bike_dock.delete_at(@counter)
       end
-      counter += 1
+      
+      @counter += 1
       raise 'All bikes broken' if all_bikes_broken
     end
   end
@@ -43,6 +43,6 @@ private
   end
 
   def all_bikes_broken
-    counter = @bike_dock.length
+    @counter == @bike_dock.length
   end
 end

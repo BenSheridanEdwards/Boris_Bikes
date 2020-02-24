@@ -39,7 +39,7 @@ RSpec.describe 'DockingStation' do
     before(:each) do
       allow(bike).to receive(:working?).and_return false
       5.times { station.dock(bike) }
-   end
+    end
 
     it 'should raise an error telling the user that all the bikes are broken' do
       message = 'All bikes broken'
